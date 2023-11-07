@@ -1,20 +1,55 @@
-## Weather App w/ Angular, C# (ASP.NET), Tailwind, SQLite
+## Weather App with Angular, C# (ASP.NET Core), Tailwind CSS, and SQLite
 
-README tulee vielä muuttumaan paremmaksi. :)
+This README will be updated to be more informative soon. :)
 
-- esim. Postman voi testata
+You can use tools like Postman to test the API endpoints. For instance, to fetch all cities, you can use the following GET request:
 
-- Voi lisätä ja poistaa kaupungin
-- Voi lisätä, päivittää ja poistaa säätiedon kaupungille
-- Voi hakea kaikki kaupungit
-- Voi hakea yksittäisen säätiedon
+```plaintext
+GET https://localhost:5001/api/cities
+```
 
-- Komentoja:
+### Features:
 
-- dotnet ef database drop
-- dotnet ef migrations add InitialCreate
-- dotnet ef database update
-- dotnet watch
+- Add and remove cities
+- Add, update, and delete weather information for a city
+- Fetch all cities
+- Retrieve specific weather information for a city
+
+### Running the Application:
+
+To run the application, start the frontend and backend (API) separately.
+
+In the frontend root directory, install dependencies with:
+
+```
+npm install
+```
+
+Then, launch the frontend with:
+
+```
+ng serve
+```
+
+In the Backend / API root directory, ensure the necessary packages are installed with:
+
+```
+npm ci
+```
+
+And then start the backend with:
+
+```
+dotnet run
+```
+
+Backend / API Commands:
+
+- `dotnet ef database drop` - Drop the existing database
+- `dotnet ef migrations add InitialCreate` - Create initial database migrations
+- `dotnet ef database update` - Apply the database updates
+- `dotnet watch` - Start the backend with live reloading
+- `dotnet run` - Run the backend
 
 ### Note
 
