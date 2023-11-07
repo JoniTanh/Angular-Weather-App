@@ -1,5 +1,7 @@
 ## Weather App with Angular, C# (ASP.NET Core), Tailwind CSS, and SQLite
 
+In progress.. :)
+
 This README will be updated to be more informative soon. :)
 
 You can use tools like Postman to test the API endpoints. For instance, to fetch all cities, you can use the following GET request:
