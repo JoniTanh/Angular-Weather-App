@@ -1,0 +1,41 @@
+[
+    {
+        "CityName": "Tampere",
+        "WeatherData": [
+            {
+                "Date": "2023-11-06",
+                "TempC": 12,
+                "Rainfall": 0,
+                "WindSpeed": 2
+            }
+        ]
+    },
+    {
+        "CityName": "Oulu",
+        "WeatherData": [
+            {
+                "Date": "2023-11-05",
+                "TempC": 11,
+                "Rainfall": 0.3,
+                "WindSpeed": 7
+            },
+            {
+                "Date": "2023-11-06",
+                "TempC": 15,
+                "Rainfall": 0.5,
+                "WindSpeed": 6
+            }
+        ]
+    },
+    {
+        "CityName": "Lahti",
+        "WeatherData": [
+            {
+                "Date": "2023-11-06",
+                "TempC": 14,
+                "Rainfall": 0.7,
+                "WindSpeed": 7
+            }
+        ]
+    }
+]
