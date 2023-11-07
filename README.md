@@ -1,8 +1,6 @@
 ## Weather App with Angular, C# (ASP.NET Core), Tailwind CSS, and SQLite
 
-In progress.. :)
-
-This README will be updated to be more informative soon. :)
+The development of the application is in progress, and the README file is being updated to provide more comprehensive information. The file will be further refined based on testing... :)
 
 You can use tools like Postman to test the API endpoints. For instance, to fetch all cities, you can use the following GET request:
 
@@ -36,7 +34,7 @@ ng serve
 In the Backend / API root directory, ensure the necessary packages are installed with:
 
 ```
-npm ci
+dotnet restore
 ```
 
 And then start the backend with:
