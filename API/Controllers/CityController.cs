@@ -25,7 +25,8 @@ public class CityController : BaseApiController
 
         var city = new AppCity
         {
-            CityName = newCity.CityName.ToLower()
+            CityName = newCity.CityName.ToLower(),
+            CityInfo = newCity.CityInfo
         };
 
         _context.Cities.Add(city);
@@ -33,7 +34,8 @@ public class CityController : BaseApiController
 
         return new CityDto
         {
-            CityName = city.CityName
+            CityName = city.CityName,
+            CityInfo = city.CityInfo
         };
     }
 
@@ -55,6 +57,21 @@ public class CityController : BaseApiController
         await _context.SaveChangesAsync();
 
         return Ok(cityToReturn);
+    }
+
+    [HttpPut("update-city-info/{id}")]
+    public async Task<IActionResult> UpdateCityInfo(int id, UpdateCityDto updateCityDto)
+    {
+        var city = await _context.Cities.FindAsync(id);
+
+        if (city == null) return NotFound("City not found");
+
+        city.CityInfo = updateCityDto.CityInfo;
+
+        _context.Cities.Update(city);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
     }
 
 }

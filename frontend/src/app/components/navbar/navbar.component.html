@@ -1,0 +1,11 @@
+<div class="w-64 min-h-screen bg-blue-900 p-5 text-white">
+  <nav class="space-y-2">
+    <a
+      *ngFor="let item of navItems"
+      [routerLink]="item.path"
+      class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
+    >
+      {{ item.title }}
+    </a>
+  </nav>
+</div>

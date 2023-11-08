@@ -23,6 +23,9 @@ namespace API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("CityInfo")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("CityName")
                         .HasColumnType("TEXT");
 
