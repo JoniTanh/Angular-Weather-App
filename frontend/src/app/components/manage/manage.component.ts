@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CityService } from 'src/app/services/city.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 interface City {
   id: number;
@@ -22,7 +23,7 @@ export class ManageComponent implements OnInit, OnDestroy {
   updateCityForm: FormGroup;
   private unsubscribe$ = new Subject<void>();
 
-  constructor(private cityService: CityService) {
+  constructor(private cityService: CityService, private router: Router) {
     this.addCityForm = new FormGroup({
       cityName: new FormControl('', Validators.required),
     });
@@ -94,6 +95,10 @@ export class ManageComponent implements OnInit, OnDestroy {
         next: () => this.fetchCities(),
         error: this.handleError,
       });
+  }
+
+  navigateToAddWeather(cityName: string) {
+    this.router.navigate(['/manage/add-weather', cityName]);
   }
 
   private handleError = (error: any): void => {

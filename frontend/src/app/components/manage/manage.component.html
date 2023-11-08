@@ -62,7 +62,10 @@
         </ng-template>
       </div>
       <div class="px-6 pt-4 pb-2">
-        <button class="bg-green-500 text-white py-1 px-3 rounded-lg mr-2 mb-4">
+        <button
+          (click)="navigateToAddWeather(city.cityname)"
+          class="bg-green-500 text-white py-1 px-3 rounded-lg mr-2 mb-4"
+        >
           Add Weather
         </button>
         <button
