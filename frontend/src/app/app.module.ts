@@ -10,7 +10,7 @@ import { ManageComponent } from './components/manage/manage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OpenWeatherPageComponent } from './components/open-weather-page/open-weather-page.component';
 import { MyWeatherPageComponent } from './components/my-weather-page/my-weather-page.component';
-import { AddWeatherPageComponent } from './components/add-weather-page/add-weather-page.component';
+import { AddWeatherComponent } from './components/add-weather/add-weather.component';
 
 const routes: Routes = [
   {
@@ -35,8 +35,12 @@ const routes: Routes = [
   },
   {
     path: 'manage/add-weather/:cityName',
-    component: AddWeatherPageComponent,
+    component: AddWeatherComponent,
     data: { title: 'Add Weather', showInNav: false },
+  },
+  {
+    path: '**',
+    redirectTo: '',
   },
 ];
 
@@ -48,6 +52,7 @@ const routes: Routes = [
     ManageComponent,
     OpenWeatherPageComponent,
     MyWeatherPageComponent,
+    AddWeatherComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

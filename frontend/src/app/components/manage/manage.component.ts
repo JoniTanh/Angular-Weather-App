@@ -51,7 +51,11 @@ export class ManageComponent implements OnInit, OnDestroy {
       .getCities()
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
-        next: (cities) => (this.cities = cities),
+        next: (cities) => {
+          this.cities = cities.sort((a: any, b: any) =>
+            a.cityname.localeCompare(b.cityname)
+          );
+        },
         error: this.handleError,
       });
   }
@@ -97,8 +101,10 @@ export class ManageComponent implements OnInit, OnDestroy {
       });
   }
 
-  navigateToAddWeather(cityName: string) {
-    this.router.navigate(['/manage/add-weather', cityName]);
+  navigateToAddWeather(cityId: number, cityName: string) {
+    this.router.navigate(['/manage/add-weather', cityName], {
+      state: { cityId, cityName },
+    });
   }
 
   private handleError = (error: any): void => {

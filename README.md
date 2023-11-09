@@ -16,17 +16,17 @@ Users have the ability to:
 - `View Statistics:` Access a variety of statistics generated from the input data.
 - `Analyze Patterns:` Make use of graphical and tabulated representations to analyze weather trends over time.
 
-<b>Integration with Open Weather API</b>
-
-In addition to manual data management, the application integrates with the Open Weather API, which provides real-time weather information. This feature allows users to:
-
-- `Fetch Current Weather Data:` Automatically retrieve and display weather conditions for a chosen location.
-
 You can use tools like Postman to test the API endpoints. For instance, to fetch all cities, you can use the following GET request:
 
 ```plaintext
 GET https://localhost:5001/api/cities
 ```
+
+<b>Integration with Open Weather API</b>
+
+In addition to manual data management, the application integrates with the Open Weather API, which provides real-time weather information. This feature allows users to:
+
+- `Fetch Current Weather Data:` Automatically retrieve and display weather conditions for a chosen location.
 
 ### Project Setup
 
