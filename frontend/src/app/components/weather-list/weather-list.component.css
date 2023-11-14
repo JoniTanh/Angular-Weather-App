@@ -1,0 +1,32 @@
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+    border: 2px solid #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0056b3;
+  }
+  
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #007bff #f1f1f1;
+  }
+  
+  .weather-list-container {
+    padding-top: 56px;
+    height: 426px;
+  }
+  
+  .weather-item {
+      cursor: pointer;
+  }

@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
-interface City {
+export interface City {
   id: number;
   cityname: string;
   cityInfo: string;
@@ -102,7 +102,7 @@ export class ManageComponent implements OnInit, OnDestroy {
   }
 
   navigateToAddWeather(cityId: number, cityName: string) {
-    this.router.navigate(['/manage/add-weather', cityName], {
+    this.router.navigate(['/manage/weather', cityName], {
       state: { cityId, cityName },
     });
   }

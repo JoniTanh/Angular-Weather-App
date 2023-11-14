@@ -51,7 +51,7 @@ public class WeatherController : BaseApiController
         return Ok(weatherToReturn);
     }
 
-    [HttpPut("update/{id}")]
+    [HttpPut("update-weather/{id}")]
     public async Task<ActionResult> UpdateWeather(int id, WeatherUpdateDto weatherUpdateDto)
     {
         var weather = await _context.WeatherData.FindAsync(id);

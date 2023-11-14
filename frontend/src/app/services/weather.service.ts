@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +13,19 @@ export class WeatherService {
   addWeather(cityName: string, weatherData: any): Observable<any> {
     return this.http.post(
       `${this.baseUrl}/weather/add-weather/${cityName}`,
+      weatherData
+    );
+  }
+
+  deleteWeatherData(weatherId: number): Observable<any> {
+    return this.http.delete(
+      `${this.baseUrl}/weather/delete-weather/${weatherId}`
+    );
+  }
+
+  updateWeatherData(weatherId: number, weatherData: any): Observable<any> {
+    return this.http.put(
+      `${this.baseUrl}/weather/update-weather/${weatherId}`,
       weatherData
     );
   }

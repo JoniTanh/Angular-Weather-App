@@ -10,7 +10,10 @@ import { ManageComponent } from './components/manage/manage.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OpenWeatherPageComponent } from './components/open-weather-page/open-weather-page.component';
 import { MyWeatherPageComponent } from './components/my-weather-page/my-weather-page.component';
-import { AddWeatherComponent } from './components/add-weather/add-weather.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WeatherManagementComponent } from './components/weather-management/weather-management.component';
+import { WeatherFormComponent } from './components/weather-form/weather-form.component';
+import { WeatherListComponent } from './components/weather-list/weather-list.component';
 
 const routes: Routes = [
   {
@@ -34,8 +37,8 @@ const routes: Routes = [
     data: { title: 'Manage', showInNav: true },
   },
   {
-    path: 'manage/add-weather/:cityName',
-    component: AddWeatherComponent,
+    path: 'manage/weather/:cityName',
+    component: WeatherManagementComponent,
     data: { title: 'Add Weather', showInNav: false },
   },
   {
@@ -52,7 +55,9 @@ const routes: Routes = [
     ManageComponent,
     OpenWeatherPageComponent,
     MyWeatherPageComponent,
-    AddWeatherComponent,
+    WeatherListComponent,
+    WeatherManagementComponent,
+    WeatherFormComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -60,6 +65,7 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

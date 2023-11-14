@@ -1,0 +1,20 @@
+<div class="weather-form-background">
+  <div
+    class="flex justify-center items-center w-full pt-8 text-white text-outline text-3xl"
+  >
+    <h1 class="capitalize">{{ cityName }}</h1>
+  </div>
+  <div class="py-8 flex justify-center space-x-8">
+    <div class="flex-1 max-w-md ml-5">
+      <app-weather-form
+        [editWeatherData]="selectedWeatherData"
+        (weatherUpdated)="updateWeatherList()"
+      ></app-weather-form>
+    </div>
+    <div class="flex-2 mr-5">
+      <app-weather-list
+        (weatherSelected)="displayWeatherDetail($event)"
+      ></app-weather-list>
+    </div>
+  </div>
+</div>
