@@ -101,7 +101,7 @@ export class ManageComponent implements OnInit, OnDestroy {
       });
   }
 
-  navigateToAddWeather(cityId: number, cityName: string) {
+  navigateToManageWeather(cityId: number, cityName: string) {
     this.router.navigate(['/manage/weather', cityName], {
       state: { cityId, cityName },
     });
