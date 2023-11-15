@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'open-weather',
     component: OpenWeatherComponent,
-    data: { title: 'Open Weather', showInNav: true },
+    data: { title: 'Open Weather API', showInNav: true },
   },
   {
     path: 'manage',

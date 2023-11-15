@@ -1,20 +1,21 @@
 ## Weather App with Angular, C# (ASP.NET Core), Tailwind CSS, and SQLite
 
-The development of the application is in progress, with the front-end currently undergoing significant development. The README file is being updated to provide more comprehensive information and will be further refined based on ongoing testing and feedback. :)
+The Weather App is a versatile tool that provides detailed weather forecasts and historical weather conditions. Users can add and manage different cities, assigning each a unique information text and storing their weather data by date. The app enables the recording of temperature (°C), rainfall (mm), and wind speed (m/s), as well as the editing or deletion of these data as needed.
 
-## About
+### About
 
-This application serves as a personal weather data management tool, designed to enable users to store, update, and delete weather statistics for cities, towns, or specific locations of their choice. The primary purpose is to provide a personalized experience where users can maintain a record of weather patterns and changes as per their individual requirements or interests.
+This application serves as a comprehensive weather data management tool. It integrates with the Chart.js library for visualizations, helping users understand weather trends over time. Additionally, it includes integration with the OpenWeather API for real-time weather information from any location.
 
 ### Functionality
 
 Users have the ability to:
 
-- `Record Weather Data:` Manually input weather data for different locations.
-- `Edit Entries:` Update previously entered data to ensure accuracy.
-- `Delete Records:` Remove data that is no longer needed or relevant.
-- `View Statistics:` Access a variety of statistics generated from the input data.
-- `Analyze Patterns:` Make use of graphical and tabulated representations to analyze weather trends over time.
+- `Record Weather Data:` Manually input weather data for different locations including temperature, rainfall, and wind speed.
+- `Edit and Delete Entries:` Update or remove previously entered data as required.
+- `Visualize Data:` Utilize Chart.js for graphical representation of weather trends.
+- `Fetch Real-Time Data:` Seamlessly integrate with OpenWeather API for current weather conditions and forecasts.
+
+### API Interaction
 
 You can use tools like Postman to test the API endpoints. For instance, to fetch all cities, you can use the following GET request:
 

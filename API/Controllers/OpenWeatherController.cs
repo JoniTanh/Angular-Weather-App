@@ -13,12 +13,13 @@ public class OpenWeatherController : BaseApiController
         _httpClient = httpClientFactory.CreateClient();
     }
 
-    [HttpGet("{city}/{countryCode}")]
-    public async Task<IActionResult> GetWeather(string city, string countryCode)
+    [HttpGet("{city}/{countryCode?}")]
+    public async Task<IActionResult> GetWeather(string city, string countryCode = "")
     {
-
         var apiKey = _configuration["OpenWeatherSettings:ApiKey"];
-        var url = $"https://api.openweathermap.org/data/2.5/weather?q={city},{countryCode}&appid={apiKey}";
+        var url = String.IsNullOrEmpty(countryCode)
+            ? $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={apiKey}"
+            : $"https://api.openweathermap.org/data/2.5/weather?q={city},{countryCode}&appid={apiKey}";
 
         var response = await _httpClient.GetAsync(url);
         if (response.IsSuccessStatusCode)

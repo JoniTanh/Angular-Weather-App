@@ -1,22 +1,29 @@
 <div class="bg-gray-200 h-full min-h-screen pt-6">
+  <div class="text-center mb-6 text-2xl font-semibold text-gray-700">
+    Check Current Weather Conditions
+  </div>
+
   <div class="flex justify-center">
-    <div class="bg-white rounded shadow-lg p-6">
+    <div class="bg-white rounded shadow-lg p-6 w-full md:max-w-3xl">
       <div class="flex items-center space-x-2">
         <input
           type="text"
           [(ngModel)]="city"
           placeholder="Enter City Name"
-          class="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline capitalize"
+          class="shadow appearance-none border rounded py-2 pb-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline capitalize"
         />
-        <select
-          [(ngModel)]="countryCode"
-          class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-        >
-          <option value="" disabled selected>Select Country</option>
-          <option *ngFor="let country of countyCodes" [value]="country.code">
-            {{ country.name }} ({{ country.code }})
-          </option>
-        </select>
+        <div class="flex flex-col mt-5">
+          <select
+            [(ngModel)]="countryCode"
+            class="shadow border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
+            <option value="" disabled selected>Select Country</option>
+            <option *ngFor="let country of countyCodes" [value]="country.code">
+              {{ country.name }} ({{ country.code }})
+            </option>
+          </select>
+          <div class="text-xs text-cyan-700 px-2">Optional</div>
+        </div>
         <button
           (click)="getWeather()"
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -30,19 +37,56 @@
 
   <div
     *ngIf="weatherData"
-    class="mt-6 px-8 py-4 bg-white rounded shadow-md mx-auto w-full md:max-w-xl"
+    class="mt-6 px-8 py-4 bg-white rounded shadow-md mx-auto w-full md:max-w-lg"
   >
-    <h2 class="text-xl font-semibold mb-2">
-      {{ weatherData.name }}, {{ weatherData.sys.country }}
-    </h2>
-    <p class="mb-1">
-      <strong>Temperature:</strong> {{ weatherData.main.temp }}°C
-    </p>
-    <p class="mb-1">
-      <strong>Weather:</strong> {{ weatherData.weather[0].main }}
-    </p>
-    <p>
-      <strong>Description:</strong> {{ weatherData.weather[0].description }}
-    </p>
+    <div class="flex justify-between items-center border-b pb-2">
+      <h2 class="text-xl font-semibold">
+        {{ weatherData.name }}, {{ weatherData.sys.country }}
+      </h2>
+      <span class="text-sm text-gray-500"
+        >GMT{{
+          (weatherData.timezone >= 0 ? "+" : "") + weatherData.timezone / 3600
+        }}</span
+      >
+    </div>
+    <div class="flex items-start mt-4">
+      <div class="flex flex-col items-center mr-4">
+        <img
+          class="w-24 h-24"
+          src="http://openweathermap.org/img/wn/{{
+            weatherData.weather[0].icon
+          }}.png"
+          alt="Weather Icon"
+        />
+        <p class="text-center text-sm mt-2 capitalize text-gray-500">
+          {{ weatherData.weather[0].description }}
+        </p>
+      </div>
+      <div class="flex-1">
+        <div class="text-right">
+          <p class="mb-1">
+            <strong>Temperature:</strong>
+            {{ weatherData.main.temp - 273.15 | number : "1.0-2" }} °C
+          </p>
+          <p class="mb-1">
+            <strong>Feels Like:</strong>
+            {{ weatherData.main.feels_like - 273.15 | number : "1.0-2" }} °C
+          </p>
+          <p class="mb-1">
+            <strong>Humidity:</strong> {{ weatherData.main.humidity }} %
+          </p>
+          <p class="mb-1">
+            <strong>Pressure:</strong> {{ weatherData.main.pressure }} hPa
+          </p>
+          <p class="mb-1">
+            <strong>Wind:</strong> {{ weatherData.wind.speed }} m/s,
+            {{ weatherData.wind.deg }} °
+          </p>
+          <p class="mb-1">
+            <strong>Wind Gust:</strong> {{ weatherData.wind.gust }} m/s
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
