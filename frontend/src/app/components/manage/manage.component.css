@@ -9,11 +9,3 @@
 .custom-font-size {
     font-size: 40px;
 }
-
-.cities-background {
-    background-image: url('/assets/images/winter-forest.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-}

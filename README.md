@@ -42,7 +42,10 @@ appsettings.json
       "Microsoft.AspNetCore": "Information"
     }
   },
-  "AllowedHosts": "*"
+  "AllowedHosts": "*",
+  "OpenWeatherSettings": {
+    "ApiKey": "<API_KEY>"
+  }
 }
 ```
 
@@ -58,6 +61,9 @@ appsettings.Development.json
   },
   "ConnectionStrings": {
     "DefaultConnection": "Data source=weatherapp.db"
+  },
+  "OpenWeatherSettings": {
+    "ApiKey": "<API_KEY>"
   }
 }
 ```

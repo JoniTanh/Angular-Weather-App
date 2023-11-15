@@ -8,12 +8,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { OpenWeatherPageComponent } from './components/open-weather-page/open-weather-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WeatherManagementComponent } from './components/weather-management/weather-management.component';
 import { WeatherFormComponent } from './components/weather-form/weather-form.component';
 import { WeatherListComponent } from './components/weather-list/weather-list.component';
 import { WeatherChartComponent } from './components/weather-chart/weather-chart.component';
+import { OpenWeatherComponent } from './components/open-weather/open-weather.component';
 
 const routes: Routes = [
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
   },
   {
     path: 'open-weather',
-    component: OpenWeatherPageComponent,
+    component: OpenWeatherComponent,
     data: { title: 'Open Weather', showInNav: true },
   },
   {
@@ -53,11 +53,11 @@ const routes: Routes = [
     NavbarComponent,
     HomeComponent,
     ManageComponent,
-    OpenWeatherPageComponent,
     WeatherListComponent,
     WeatherManagementComponent,
     WeatherFormComponent,
     WeatherChartComponent,
+    OpenWeatherComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
